@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "304083807960",
+    "firebase_url": "https://am4l-15123-15154.firebaseio.com",
+    "project_id": "am4l-15123-15154",
+    "storage_bucket": "am4l-15123-15154.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:304083807960:android:872ec45292b728e69eb1ad",
+        "android_client_info": {
+          "package_name": "be.ecam.am4l_15123_15154"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "304083807960-ltkbbak5kteftp6qqo6v5jir4vnlqjkt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCB1RpXXXYzHDG32-dVRn1TFewiwfWG-rc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "304083807960-ltkbbak5kteftp6qqo6v5jir4vnlqjkt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
