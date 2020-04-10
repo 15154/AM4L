@@ -14,4 +14,9 @@ class DatabaseService {
       'classrooms': classrooms,
     });
   }
+
+  // get noties strem
+  Stream<QuerySnapshot> get notices {
+    return noticeCollection.snapshots();
+  }
 }
