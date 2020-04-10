@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:provider/provider.dart';
+import 'package:am4l_15123_15154/models/notice.dart';
 
 class NoticeList extends StatefulWidget {
   @override
@@ -11,11 +11,11 @@ class _NoticeListState extends State<NoticeList> {
   @override
   Widget build(BuildContext context) {
 
-    final notices = Provider.of<QuerySnapshot>(context);
-    //print(notices.documents);
-    for(var doc in notices.documents) {
-      print(doc.data);
-    }
+    final notices = Provider.of<List<Notice>>(context);
+    notices.forEach((notice) {
+      print(notice.name);
+      print(notice.classrooms);
+    });
 
     return Container(
       

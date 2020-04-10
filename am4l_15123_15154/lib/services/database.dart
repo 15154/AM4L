@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:am4l_15123_15154/models/notice.dart';
 
 class DatabaseService {
 
@@ -15,8 +16,19 @@ class DatabaseService {
     });
   }
 
+  // notice liste from snapshot
+  List<Notice> _noticeListFromSnapshot(QuerySnapshot snapshot) {
+    return snapshot.documents.map((doc){
+      return Notice(
+        name: doc.data['name'] ?? '',
+        classrooms: doc.data['classrooms'] ?? '',
+      );
+    }).toList();
+  }
+
   // get noties strem
-  Stream<QuerySnapshot> get notices {
-    return noticeCollection.snapshots();
+  Stream<List<Notice>> get notices {
+    return noticeCollection.snapshots()
+      .map(_noticeListFromSnapshot);
   }
 }
