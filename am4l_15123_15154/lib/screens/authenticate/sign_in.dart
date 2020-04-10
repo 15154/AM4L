@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class SignIn extends StatefulWidget {
 
-  final Fucntion toggleView;
+  final Function toggleView;
   SignIn({ this.toggleView });
 
   @override
