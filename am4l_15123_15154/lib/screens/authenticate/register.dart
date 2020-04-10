@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:am4l_15123_15154/services/auth.dart';
 
 class Register extends StatefulWidget {
+
+  final Fucntion toggleView;
+  Register({ this.toggleView });
+
   @override
   _RegisterState createState() => _RegisterState();
 }
@@ -19,9 +23,18 @@ class _RegisterState extends State<Register> {
     return Scaffold(
       backgroundColor: Colors.brown[100],
       appBar: AppBar(
-          backgroundColor: Colors.brown[400],
-          elevation: 0.0,
-          title: Text('Sign up to Brew Crew')
+        backgroundColor: Colors.brown[400],
+        elevation: 0.0,
+        title: Text('Sign up to Brew Crew'),
+        actions: <Widget>[
+          FlatButton.icon(
+            icon: Icon(Icons.person),
+            label: Text('Sign In'),
+            onPressed: () {
+              widget.toggleView();
+            },
+          )
+        ],
       ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
