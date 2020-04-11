@@ -11,6 +11,16 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    void _showSettingsPanel() {
+      showModalBottomSheet(context: context, builder: (context) {
+        return Container(
+          padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
+          child: Text('Bottom sheet'),
+        );
+      });
+    }
+
     return StreamProvider<List<Notice>>.value(
         value: DatabaseService().notices,
         child: Scaffold(
@@ -26,7 +36,12 @@ class Home extends StatelessWidget {
               onPressed: () async {
                 await _auth.signOut();
               },
-            )
+            ),
+            FlatButton.icon(
+              icon: Icon(Icons.settings),
+              label: Text('Settigns'),
+              onPressed: () => _showSettingsPanel(),
+            ),
           ],
         ),
         body: NoticeList(),
