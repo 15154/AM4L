@@ -15,6 +15,6 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         home: Wrapper(),
       ),
-    ); // StreamProvider.value
+    );
   }
 }
