@@ -22,7 +22,7 @@ class _ClassroomsFormState extends State<ClassroomsForm> {
       child: Column(
         children: <Widget>[
           Text(
-            'Update your classrooms notices',
+            'Add a classroom',
             style: TextStyle(fontSize: 18.0),
           ),
           SizedBox(height: 20.0),
