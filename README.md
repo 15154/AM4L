@@ -1,1 +1,2 @@
-# AM4L
+Le directeur d'une école primaire souhaite avoir une application pour éliminer les avis papier qui sont régulièrement donné aux élèves. Les parents devraient pouvoir se créer un compte et s'abonner aux avis d'une classe de l'école afin de recevoir des notifications pour chaque avis. Il faudra aussi avoir une interface permettant au directeur d'ajouter des avis et de les assigner à une ou plusieur classes.
+L'idéal serait que la page du directeur puisse être accessible par un navigateur web car il a bcp de chance qu'il écrive ses avis sur un PC.
