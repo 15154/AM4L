@@ -9,12 +9,8 @@ class ClassroomsForm extends StatefulWidget {
 class _ClassroomsFormState extends State<ClassroomsForm> {
 
   final _formKey = GlobalKey<FormState>();
-  final List<String> classrooms = ['1', '2', '3', '4', '5', '6'];
 
   // form values
-  //String _currentName;
-  //String _currentClassrooms;
-
   bool _1Val = false;
   bool _2Val = false;
   bool _3Val = false;
@@ -78,6 +74,18 @@ class _ClassroomsFormState extends State<ClassroomsForm> {
               checkbox("5th year", _5Val),
               checkbox("6th year", _6Val),
             ],
+          ),
+          RaisedButton(
+            color: Colors.pink[400],
+            child: Text(
+              'Subscribe',
+              style: TextStyle(color: Colors.white),
+            ),
+            onPressed: () async {
+              //print(_firstValue);
+              //print(_secValue);
+              
+            },
           ),
         ],
       ),
