@@ -14,7 +14,7 @@ class NoticeTile extends StatelessWidget {
         margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
         child: ListTile(
           title: Text(notice.name),
-          subtitle: Text('Follows ${notice.classrooms} classroom(s)'),
+          //subtitle: Text('Follows ${notice.classrooms} classroom(s)'),
         ),
       )
     );
