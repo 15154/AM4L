@@ -12,11 +12,55 @@ class _ClassroomsFormState extends State<ClassroomsForm> {
   final List<String> classrooms = ['1', '2', '3', '4', '5', '6'];
 
   // form values
-  //tring _currentName;
+  //String _currentName;
   //String _currentClassrooms;
 
-  bool _firstValue = false;
-  bool _secValue = false;
+  bool _1Val = false;
+  bool _2Val = false;
+  bool _3Val = false;
+  bool _4Val = false;
+  bool _5Val = false;
+  bool _6Val = false;
+
+  /// box widget
+  /// [title] is the name of the checkbox
+  /// [boolValue] is the boolean value of the checkbox
+  Widget checkbox(String title, bool boolValue) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Text(title),
+        Checkbox(
+          value: boolValue,
+          onChanged: (bool value) {
+            /// manage the state of each value
+            setState(() {
+              switch (title) {
+                case "1st year":
+                  _1Val = value;
+                  break;
+                case "2nd year":
+                  _2Val = value;
+                  break;
+                case "3rd year":
+                  _3Val = value;
+                  break;
+                case "4th year":
+                  _4Val = value;
+                  break;
+                case "5th year":
+                  _5Val = value;
+                  break;
+                case "6th year":
+                  _6Val = value;
+                  break;
+              }
+            });
+          },
+        )
+      ],
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,108 +68,130 @@ class _ClassroomsFormState extends State<ClassroomsForm> {
       key: _formKey,
       child: Column(
         children: <Widget>[
-          Text(
-            'Subscribe to classrooms',
-            style: TextStyle(fontSize: 18.0),
-          ),
-          SizedBox(height: 20.0),
-          // dropdown
-          DropdownButtonFormField(
-            decoration: textInputDecoration,
-            //value: _currentClassrooms ?? '1',
-            items: [
-              DropdownMenuItem(
-                child: Row(
-                  children: <Widget>[
-                    Checkbox(
-                      onChanged: (bool value) {
-
-                      }, value: _firstValue,
-                    ),
-                    Text('1st year'),
-                  ],
-                ),
-              ),
-              DropdownMenuItem(
-                child: Row(
-                  children: <Widget>[
-                    Checkbox(
-                      onChanged: (bool value) {
-                      },
-                      value: _secValue,
-                    ),
-                    Text('2nd year'),
-                  ],
-                ),
-              ),
-              DropdownMenuItem(
-                child: Row(
-                  children: <Widget>[
-                    Checkbox(
-                      onChanged: (bool value) {
-                      },
-                      value: _secValue,
-                    ),
-                    Text('3rd year'),
-                  ],
-                ),
-              ),
-              DropdownMenuItem(
-                child: Row(
-                  children: <Widget>[
-                    Checkbox(
-                      onChanged: (bool value) {
-                      },
-                      value: _secValue,
-                    ),
-                    Text('4th year'),
-                  ],
-                ),
-              ),
-              DropdownMenuItem(
-                child: Row(
-                  children: <Widget>[
-                    Checkbox(
-                      onChanged: (bool value) {
-                      },
-                      value: _secValue,
-                    ),
-                    Text('5th year'),
-                  ],
-                ),
-              ),
-              DropdownMenuItem(
-                child: Row(
-                  children: <Widget>[
-                    Checkbox(
-                      onChanged: (bool value) {
-                      },
-                      value: _secValue,
-                    ),
-                    Text('6th year'),
-                  ],
-                ),
-              ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              checkbox("1st year", _1Val),
+              checkbox("2nd year", _2Val),
+              checkbox("3rd year", _3Val),
+              checkbox("4th year", _4Val),
+              checkbox("5th year", _5Val),
+              checkbox("6th year", _6Val),
             ],
-            onChanged: (value) {
-            },
-            hint: Text('Select a '),
-          ),
-          RaisedButton(
-            color: Colors.pink[400],
-            child: Text(
-              'Subscribe',
-              style: TextStyle(color: Colors.white),
-            ),
-            onPressed: () async {
-              print(_firstValue);
-              print(_secValue);
-            },
           ),
         ],
       ),
     );
   }
+
+  // @override
+  // Widget build(BuildContext context) {
+  //   return Form(
+  //     key: _formKey,
+  //     child: Column(
+  //       children: <Widget>[
+  //         Text(
+  //           'Subscribe to classrooms',
+  //           style: TextStyle(fontSize: 18.0),
+  //         ),
+  //         SizedBox(height: 20.0),
+  //         // dropdown
+  //         DropdownButtonFormField(
+  //           decoration: textInputDecoration,
+  //           //value: _currentClassrooms ?? '1',
+  //           items: [
+  //             DropdownMenuItem(
+  //               child: Row(
+  //                 children: <Widget>[
+  //                   Checkbox(
+  //                     onChanged: (bool value) {
+
+  //                     }, value: _firstValue,
+  //                   ),
+  //                   Text('1st year'),
+  //                 ],
+  //               ),
+  //             ),
+  //             DropdownMenuItem(
+  //               child: Row(
+  //                 children: <Widget>[
+  //                   Checkbox(
+  //                     onChanged: (bool value) {
+  //                     },
+  //                     value: _secValue,
+  //                   ),
+  //                   Text('2nd year'),
+  //                 ],
+  //               ),
+  //             ),
+  //             DropdownMenuItem(
+  //               child: Row(
+  //                 children: <Widget>[
+  //                   Checkbox(
+  //                     onChanged: (bool value) {
+  //                     },
+  //                     value: _secValue,
+  //                   ),
+  //                   Text('3rd year'),
+  //                 ],
+  //               ),
+  //             ),
+  //             DropdownMenuItem(
+  //               child: Row(
+  //                 children: <Widget>[
+  //                   Checkbox(
+  //                     onChanged: (bool value) {
+  //                     },
+  //                     value: _secValue,
+  //                   ),
+  //                   Text('4th year'),
+  //                 ],
+  //               ),
+  //             ),
+  //             DropdownMenuItem(
+  //               child: Row(
+  //                 children: <Widget>[
+  //                   Checkbox(
+  //                     onChanged: (bool value) {
+  //                     },
+  //                     value: _secValue,
+  //                   ),
+  //                   Text('5th year'),
+  //                 ],
+  //               ),
+  //             ),
+  //             DropdownMenuItem(
+  //               child: Row(
+  //                 children: <Widget>[
+  //                   Checkbox(
+  //                     onChanged: (bool value) {
+  //                     },
+  //                     value: _secValue,
+  //                   ),
+  //                   Text('6th year'),
+  //                 ],
+  //               ),
+  //             ),
+  //           ],
+  //           onChanged: (value) {
+  //           },
+  //           hint: Text('Select a '),
+  //         ),
+  //         RaisedButton(
+  //           color: Colors.pink[400],
+  //           child: Text(
+  //             'Subscribe',
+  //             style: TextStyle(color: Colors.white),
+  //           ),
+  //           onPressed: () async {
+  //             print(_firstValue);
+  //             print(_secValue);
+  //           },
+  //         ),
+  //       ],
+  //     ),
+  //   );
+  // }
 
   // @override
   // Widget build(BuildContext context) {
