@@ -11,12 +11,12 @@ class _ClassroomsFormState extends State<ClassroomsForm> {
   final _formKey = GlobalKey<FormState>();
 
   // form values
-  bool _1Val = false;
-  bool _2Val = false;
-  bool _3Val = false;
-  bool _4Val = false;
-  bool _5Val = false;
-  bool _6Val = false;
+  bool _1Val = true;
+  bool _2Val = true;
+  bool _3Val = true;
+  bool _4Val = true;
+  bool _5Val = true;
+  bool _6Val = true;
 
   /// box widget
   /// [title] is the name of the checkbox
@@ -84,7 +84,9 @@ class _ClassroomsFormState extends State<ClassroomsForm> {
             onPressed: () async {
               //print(_firstValue);
               //print(_secValue);
-              
+              if (_formKey.currentState.validate()) {
+                Navigator.pop(context);
+              }
             },
           ),
         ],

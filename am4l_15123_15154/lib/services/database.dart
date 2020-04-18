@@ -9,10 +9,10 @@ class DatabaseService {
   // collection reference
   final CollectionReference noticeCollection = Firestore.instance.collection('notices');
 
-  Future updateUserData(String name, String classrooms) async {
+  Future updateUserData(String name, String value) async {
     return await noticeCollection.document(uid).setData({
       'name': name,
-      'classrooms': classrooms,
+      'value': value,
     });
   }
 
@@ -21,7 +21,7 @@ class DatabaseService {
     return snapshot.documents.map((doc){
       return Notice(
         name: doc.data['name'] ?? '',
-        classrooms: doc.data['classrooms'] ?? '',
+        //value: doc.data['value'] ?? '',
       );
     }).toList();
   }

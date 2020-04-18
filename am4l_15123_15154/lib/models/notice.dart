@@ -1,7 +1,7 @@
 class Notice {
 
   final String name;
-  final String classrooms;
+  final String value;
 
-  Notice({ this.name, this.classrooms });
+  Notice({ this.name, this.value });
 }
