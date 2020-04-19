@@ -14,7 +14,7 @@ class NoticeTile extends StatelessWidget {
         margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
         child: ListTile(
           title: Text(notice.name),
-          subtitle: Text('X unread notice(s)'),
+          subtitle: Text('X unread notice(s)'), //to modify "new ad" instead of "X unread"
         ),
       )
     );

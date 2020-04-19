@@ -26,7 +26,7 @@ class DatabaseService {
     }).toList();
   }
 
-  // get notices stre m
+  // get notices stream
   Stream<List<Notice>> get notices {
     return noticeCollection.snapshots()
       .map(_noticeListFromSnapshot);
