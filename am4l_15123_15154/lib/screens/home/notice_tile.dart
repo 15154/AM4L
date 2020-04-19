@@ -15,6 +15,11 @@ class NoticeTile extends StatelessWidget {
         child: ListTile(
           title: Text(notice.name),
           subtitle: Text('X unread notice(s)'), //to modify "new ad" instead of "X unread"
+          leading: Icon(Icons.announcement),
+          trailing: Icon(Icons.keyboard_arrow_right),
+          onTap: () {
+            print('SUCCESSFULLY TAPPED');
+          },
         ),
       )
     );
