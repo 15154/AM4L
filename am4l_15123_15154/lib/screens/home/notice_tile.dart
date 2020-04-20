@@ -1,5 +1,8 @@
+import 'package:am4l_15123_15154/screens/home/adListPage.dart';
+import 'package:am4l_15123_15154/viewmodels/adListViewModel.dart';
 import 'package:flutter/material.dart';
 import 'package:am4l_15123_15154/models/notice.dart';
+import 'package:provider/provider.dart';
 
 class NoticeTile extends StatelessWidget {
 
@@ -19,6 +22,12 @@ class NoticeTile extends StatelessWidget {
           trailing: Icon(Icons.keyboard_arrow_right),
           onTap: () {
             print('SUCCESSFULLY TAPPED');
+            ChangeNotifierProvider(
+              create: null,
+              builder: (_) => AdListViewModel(),
+              child: AdListPage(),
+              );
+            
           },
         ),
       )
