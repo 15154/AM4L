@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:am4l_15123_15154/shared/constants.dart';
+import 'notice_list.dart' as notice_list;
+import 'notice_tile.dart' as notice_tile;
 
 class ClassroomsForm extends StatefulWidget {
   @override
@@ -11,12 +13,13 @@ class _ClassroomsFormState extends State<ClassroomsForm> {
   final _formKey = GlobalKey<FormState>();
 
   // form values
-  bool _1Val = false;
-  bool _2Val = false;
-  bool _3Val = false;
-  bool _4Val = false;
-  bool _5Val = false;
-  bool _6Val = false;
+  var _generalVal = false;
+  var _1Val = false;
+  var _2Val = false;
+  var _3Val = false;
+  var _4Val = false;
+  var _5Val = false;
+  var _6Val = false;
 
   /// box widget
   /// [title] is the name of the checkbox
@@ -32,6 +35,10 @@ class _ClassroomsFormState extends State<ClassroomsForm> {
             /// manage the state of each value
             setState(() {
               switch (title) {
+                case "General":
+                  _generalVal = value;
+                  
+                  break;
                 case "1st year":
                   _1Val = value;
                   break;
@@ -62,11 +69,13 @@ class _ClassroomsFormState extends State<ClassroomsForm> {
   Widget build(BuildContext context) {
     return Form(
       key: _formKey,
-      child: Column(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              checkbox("General", _generalVal),
               checkbox("1st year", _1Val),
               checkbox("2nd year", _2Val),
               checkbox("3rd year", _3Val),
@@ -85,6 +94,7 @@ class _ClassroomsFormState extends State<ClassroomsForm> {
               //print(_firstValue);
               //print(_secValue);
               if (_formKey.currentState.validate()) {
+                notice_tile.show = true;
                 Navigator.pop(context);
               }
             },

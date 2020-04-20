@@ -34,7 +34,14 @@ class _AdListPageState extends State<AdListPage> {
       appBar: AppBar(
         title: Text("Movies"),
       ),
-      body: Text("Ads will be displayed here")//_buildUI(vm)
+      body: Center(
+        child: RaisedButton(
+          child: Text('Go back'),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      )
     );
     
   }

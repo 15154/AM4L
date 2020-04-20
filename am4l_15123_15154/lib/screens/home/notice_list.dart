@@ -17,7 +17,7 @@ class _NoticeListState extends State<NoticeList> {
     return ListView.builder(
       itemCount: notices.length,
       itemBuilder: (context, index) {
-        return NoticeTile(notice: notices[index]);
+        return Visibility(child: NoticeTile(notice: notices[index]), visible: true);
       },
     );
   }

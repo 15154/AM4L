@@ -4,16 +4,20 @@ import 'package:flutter/material.dart';
 import 'package:am4l_15123_15154/models/notice.dart';
 import 'package:provider/provider.dart';
 
+var show = true;
+
 class NoticeTile extends StatelessWidget {
 
   final Notice notice;
   NoticeTile({ this.notice });
 
+  
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(top: 8.0),
-      child: Card(
+      child: Visibility(child:Card(
         margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
         child: ListTile(
           title: Text(notice.name),
@@ -27,10 +31,10 @@ class NoticeTile extends StatelessWidget {
               builder: (_) => AdListViewModel(),
               child: AdListPage(),
               );
-            
+            Navigator.push(context, MaterialPageRoute(builder: (context) => AdListPage()));
           },
         ),
-      )
+      ), visible: show),
     );
   }
 }
