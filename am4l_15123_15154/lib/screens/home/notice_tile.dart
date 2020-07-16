@@ -12,7 +12,7 @@ class NoticeTile extends StatelessWidget {
         child: Card(
           margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
           child: ListTile(
-            leading: Text("1A"),
+            leading: Text(notice.classes[0]),
             title: Text(notice.title),
             subtitle: Text(notice.body),
           ),

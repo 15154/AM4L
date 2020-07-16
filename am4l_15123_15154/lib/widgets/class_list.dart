@@ -36,25 +36,28 @@ class _ClassListState extends State<ClassList> {
     }
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Add class(es)'),
+      /*appBar: AppBar(
+        title: Text('Add class'),
+        backgroundColor: Colors.red[300],
         actions: <Widget>[
           FlatButton.icon(
             onPressed: () async {
               Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (BuildContext context) {
-                        var homePrincipal = HomePrincipal(valuee: _selectedClasses);
-                        return homePrincipal;
-                      }));
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) {
+                    var homePrincipal = HomePrincipal(valuee: _selectedClasses);
+                    return homePrincipal;
+                  }
+                )
+              );
             },
             icon: Icon(Icons.playlist_add),
             color: Colors.red[300],
             label: Text('Add'),
           )
         ],
-      ),
+      ),*/
       body: ListView(
         children: someMap.keys.map((String key) {
           return CheckboxListTile(

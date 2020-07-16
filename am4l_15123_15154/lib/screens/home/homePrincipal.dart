@@ -69,7 +69,7 @@ class _HomePrincipalState extends State<HomePrincipal> {
             key: _formKey,
             child: Column(children: <Widget>[
               Expanded(
-                  child: Column(
+                child: Column(
                 children: <Widget>[
                   TextFormField(
                     controller: _title,
@@ -93,13 +93,27 @@ class _HomePrincipalState extends State<HomePrincipal> {
                       return null;
                     },
                   ),
+                  SizedBox(height: 20.0),
+                  Expanded(child: 
+                    Container(
+                      child: StreamProvider<List<ClassLabel>>.value(
+                        value: ClassService().classes,
+                        child: Scaffold(
+                          // padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 6.0),
+                          body: ClassList(),
+                        ),
+                      ),
+                    ),
+                  ),
+                  
                   RaisedButton(
                     onPressed: () => _showAddClassesPanel(),
                     color: Colors.red[600],
-                    child: Text('Add class(es)',
+                    child: Text('Add class',
                                 style: TextStyle(color: Colors.white),
                                 )
                   ),
+
                 ],
               )),
               RaisedButton(
@@ -120,7 +134,8 @@ class _HomePrincipalState extends State<HomePrincipal> {
                             )
               ),
             ]),
-          )),
+          )
+        ),
     );
   }
 }

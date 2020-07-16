@@ -32,7 +32,7 @@ String error = '';
       appBar: AppBar(
         backgroundColor: Colors.red[300],
         elevation: 0.0,
-        title: Text('Sign in to School4All'),
+        title: Text('Sign in to Schoolifications'),
         /*actions: <Widget>[
           FlatButton.icon(
             onPressed: (){
