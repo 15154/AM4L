@@ -1,5 +1,5 @@
 name: am4l_15123_15154
-description: A new Flutter application.
+description: A school notices application for parents.
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -33,6 +33,12 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: "^0.7.5"
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: false
+  image_path: "lib/shared/letter.png"
 
 
 # For information on the generic Dart part of this file, see the
