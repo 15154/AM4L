@@ -28,19 +28,19 @@ class _RegisterState extends State<Register> {
     return loading
         ? Loading()
         : Scaffold(
-            backgroundColor: Colors.blue[50],
+            backgroundColor: Colors.brown[50],
             appBar: AppBar(
-              backgroundColor: Colors.blue[400],
+              backgroundColor: Colors.red[300],
               elevation: 0.0,
-              title: Text('Sign up to School4All'),
-              actions: <Widget>[
+              title: Text('Sign up to Schollifications'),
+              /*actions: <Widget>[
                 FlatButton.icon(
                     onPressed: () {
                       widget.toggleView();
                     },
                     icon: Icon(Icons.person),
                     label: Text('Sign In')),
-              ],
+              ],*/
             ),
             body: Container(
               padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
@@ -86,7 +86,7 @@ class _RegisterState extends State<Register> {
                     ),
                     SizedBox(height: 20.0),
                     RaisedButton(
-                        color: Colors.blue[500],
+                        color: Colors.red[600],
                         child: Text(
                           'Register',
                           style: TextStyle(color: Colors.white),

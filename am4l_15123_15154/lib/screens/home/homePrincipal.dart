@@ -49,17 +49,17 @@ class _HomePrincipalState extends State<HomePrincipal> {
     }
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.brown[50],
       appBar: AppBar(
-        title: Text('School4All'),
-        backgroundColor: Colors.blue[100],
+        title: Text('Schoolifications'),
+        backgroundColor: Colors.red[300],
         elevation: 0.0,
         actions: <Widget>[
           FlatButton.icon(
               onPressed: () async {
                 await _auth.signOut();
               },
-              icon: Icon(Icons.person),
+              icon: Icon(Icons.directions_run),
               label: Text('Logout')),
         ],
       ),

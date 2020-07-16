@@ -50,7 +50,7 @@ class _ClassListState extends State<ClassList> {
                       }));
             },
             icon: Icon(Icons.playlist_add),
-            color: Colors.blue[20],
+            color: Colors.red[300],
             label: Text('Add'),
           )
         ],

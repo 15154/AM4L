@@ -2,6 +2,7 @@ import 'package:am4l_15123_15154/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:am4l_15123_15154/shared/constants.dart';
 import 'package:am4l_15123_15154/shared/loading.dart';
+import 'register.dart';
 
 class SignIn extends StatefulWidget {
 
@@ -27,19 +28,19 @@ String error = '';
   @override
   Widget build(BuildContext context) {
     return loading ? Loading() : Scaffold(
-      backgroundColor: Colors.blue[50],
+      backgroundColor: Colors.brown[50],
       appBar: AppBar(
-        backgroundColor: Colors.blue[400],
+        backgroundColor: Colors.red[300],
         elevation: 0.0,
         title: Text('Sign in to School4All'),
-        actions: <Widget>[
+        /*actions: <Widget>[
           FlatButton.icon(
             onPressed: (){
               widget.toggleView();
             }, 
             icon: Icon(Icons.person), 
             label: Text('Register')),
-        ],
+        ],*/
       ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
@@ -66,7 +67,7 @@ String error = '';
               ),
               SizedBox(height: 20.0),
               RaisedButton(
-                color: Colors.blue[500],
+                color: Colors.red[600],
                 child: Text(
                   'Sign in',
                   style: TextStyle(color: Colors.white),
@@ -84,6 +85,30 @@ String error = '';
                   }
                 }),
                 SizedBox(height: 12.0,),
+                new GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Register()));
+                },
+                child: new Padding(
+                  padding: new EdgeInsets.all(10.0),
+                  child: new
+                    Text.rich(
+                      TextSpan(
+                        text: "If you don't have an acount,\n please create one ",
+                        style: TextStyle(color: Colors.red[600], fontSize: 14.0),
+                        children: <TextSpan>[
+                          TextSpan(
+                              text: 'here',
+                              style: TextStyle(
+                                decoration: TextDecoration.underline,
+                              )),
+                          // can add more TextSpans here...
+                        ],
+                      ),
+                    )
+                  ) 
+                ),
+                SizedBox(height: 12.0),
                 Text(
                   error,
                   style: TextStyle(color: Colors.red, fontSize: 14.0),

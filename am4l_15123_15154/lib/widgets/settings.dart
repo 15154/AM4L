@@ -63,7 +63,7 @@ class _SettingsState extends State<Settings> {
                       Navigator.pop(context);
                     },
                     icon: Icon(Icons.playlist_add),
-                    color: Colors.blue[20],
+                    color: Colors.red[300],
                     label: Text('Update'),
                   )
                 ],
