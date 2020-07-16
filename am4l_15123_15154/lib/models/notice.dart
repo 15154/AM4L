@@ -1,7 +1,21 @@
+
 class Notice {
+  final String uid;
+  final String title;
+  final String body;
+  final List classes;
 
-  final String name;
-  final String value;
+  Notice( {this.uid, this.title, this.body, this.classes});
+}
 
-  Notice({ this.name, this.value });
+class NoticeData {
+
+  final String uid;
+  final String title;
+  final String body;
+  final List classes;
+
+
+  NoticeData({ this.uid, this.title, this.body, this.classes });
+
 }

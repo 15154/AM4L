@@ -16,6 +16,7 @@ class NoticeTile extends StatelessWidget {
             title: Text(notice.title),
             subtitle: Text(notice.body),
           ),
-        ));
+        )
+    );
   }
 }
