@@ -94,8 +94,12 @@ class _HomePrincipalState extends State<HomePrincipal> {
                     },
                   ),
                   RaisedButton(
-                      onPressed: () => _showAddClassesPanel(),
-                      child: Text('Add class(es)'))
+                    onPressed: () => _showAddClassesPanel(),
+                    color: Colors.red[600],
+                    child: Text('Add class(es)',
+                                style: TextStyle(color: Colors.white),
+                                )
+                  ),
                 ],
               )),
               RaisedButton(
@@ -110,7 +114,10 @@ class _HomePrincipalState extends State<HomePrincipal> {
                     Navigator.pop(context);
                   }
                 },
-                child: Text("Ajouter"),
+                color: Colors.red[600],
+                child: Text('Add notice',
+                            style: TextStyle(color: Colors.white),
+                            )
               ),
             ]),
           )),

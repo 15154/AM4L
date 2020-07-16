@@ -37,19 +37,26 @@ class Home extends StatelessWidget {
           elevation: 0.0,
           actions: <Widget>[
             FlatButton.icon(
-                onPressed: () async {
-                  await _auth.signOut();
-                },
-                icon: Icon(Icons.directions_run),
-                label: Text('Logout')),
-            FlatButton.icon(
               icon: Icon(Icons.settings),
               label: Text('Settings'),
               onPressed: () => _showSettingsPanel(),
-            )
+            ),
+            FlatButton.icon(
+              onPressed: () async {
+                await _auth.signOut();
+              },
+              icon: Icon(Icons.directions_run),
+              label: Text('Logout'),
+            ),
           ],
         ),
         body: NoticeList(),
+          floatingActionButton: FloatingActionButton(
+          onPressed: () => _showSettingsPanel(),
+          //tooltip: 'Increment',
+          child: Icon(Icons.add),
+          backgroundColor: Colors.red[600],
+        ), // This trailing comma makes auto-formatting nicer for build methods.
       ),
     );
   }
